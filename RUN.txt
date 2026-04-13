@@ -1,0 +1,41 @@
+Portfolio monorepo — how to run locally
+========================================
+
+Deploy to GitHub Pages: see DEPLOY.md in this folder (push repo, enable Pages → GitHub Actions).
+
+Prerequisites: JDK 17+, Maven 3.9+, Node.js 20+ (or 18 LTS).
+
+1) Backend — easiest: from folder "backend" run (PowerShell):
+     .\start-backend.ps1
+   This opens three windows (8081, 8082, 8080). Wait for "Started ..." in each.
+
+   Or three manual terminals from folder "backend":
+   Terminal A — portfolio-service (port 8081):
+     mvn -pl portfolio-service spring-boot:run
+
+   Terminal B — contact-service (port 8082):
+     mvn -pl contact-service spring-boot:run
+
+   Terminal C — api-gateway (port 8080):
+     mvn -pl api-gateway spring-boot:run
+
+   Health checks:
+     http://localhost:8081/actuator/health
+     http://localhost:8082/actuator/health
+     http://localhost:8080/actuator/health
+
+2) Frontend (from folder "frontend")
+     npm install
+     npm run dev
+   Open http://localhost:5173 — Vite proxies /api to the gateway.
+
+3) Optional: build all Java modules
+     cd backend
+     mvn clean package
+
+Notes
+-----
+- Portfolio JSON: GET http://localhost:8080/api/skills|experience|education
+- Contact form: POST http://localhost:8080/api/contact  JSON body {"name","email","message"}
+- Replace resume data in backend/portfolio-service/.../PortfolioDataRepository.java
+  and frontend/src/config/profile.js when you refresh your CV.

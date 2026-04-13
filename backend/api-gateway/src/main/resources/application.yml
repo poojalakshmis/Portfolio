@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            # Patterns cover local dev and GitHub Pages (https://<user>.github.io)
+            allowedOriginPatterns:
+              - "http://localhost:*"
+              - "http://127.0.0.1:*"
+              - "https://*.github.io"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+      routes:
+        - id: portfolio-skills
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/skills
+        - id: portfolio-experience
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/experience
+        - id: portfolio-education
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/education
+        - id: contact-submit
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/contact
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
