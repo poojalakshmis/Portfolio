@@ -1,7 +1,7 @@
 Portfolio monorepo — how to run locally
 ========================================
 
-Deploy to GitHub Pages: see DEPLOY.md in this folder (push repo, enable Pages → GitHub Actions).
+Deploy to GitHub Pages: see DEPLOY.md (workflow pushes gh-pages branch; then Settings → Pages → Deploy from branch gh-pages /).
 
 Prerequisites: JDK 17+, Maven 3.9+, Node.js 20+ (or 18 LTS).
 
