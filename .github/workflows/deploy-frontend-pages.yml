@@ -1,5 +1,5 @@
 # Builds the React app and publishes frontend/dist to GitHub Pages.
-# First time: Repo → Settings → Pages → Build: GitHub Actions.
+# First time: enable Pages with source "GitHub Actions" (see DEPLOY.md Part B).
 
 name: Deploy frontend to GitHub Pages
 
@@ -46,8 +46,6 @@ jobs:
         run: npm ci && npm run build
         env:
           VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
-
-      - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
