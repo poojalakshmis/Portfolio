@@ -1,4 +1,12 @@
+function publicAssetUrl(fileName) {
+  const base = import.meta.env.BASE_URL || "/";
+  const normalized = base.endsWith("/") ? base : `${base}/`;
+  return `${normalized}${fileName.replace(/^\//, "")}`;
+}
+
 export default function Hero({ profile }) {
+  const resumeHref = publicAssetUrl(profile.resumeFileName);
+
   return (
     <section
       id="hero"
@@ -35,8 +43,8 @@ export default function Hero({ profile }) {
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href={profile.resumePdfPath}
-              download
+              href={resumeHref}
+              download={profile.resumeFileName}
               className="inline-flex items-center justify-center rounded-full bg-teal-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow transition hover:bg-teal-300"
             >
               Download ATS-Friendly Resume
@@ -49,8 +57,10 @@ export default function Hero({ profile }) {
             </a>
           </div>
           <p className="mt-4 text-xs text-slate-400">
-            Add your PDF as <span className="font-mono text-teal-200">public/pooja-lakshmi-resume.pdf</span>{" "}
-            (see <span className="font-mono">public/RESUME_README.txt</span>).
+            Word format for broad ATS compatibility. For PDF, open the file in Word →{" "}
+            <span className="text-slate-300">Save As → PDF</span>, then replace{" "}
+            <span className="font-mono text-teal-200">public/{profile.resumeFileName}</span> or add a second link in{" "}
+            <span className="font-mono text-teal-200">profile.js</span>.
           </p>
         </div>
         <div className="relative">

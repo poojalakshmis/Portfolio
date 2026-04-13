@@ -18,8 +18,11 @@ export const profile = {
    * Leave empty to use VITE_SITE_URL from .env, then the current browser address.
    */
   shareUrl: "",
-  /** Place an exported ATS PDF in `frontend/public/` with this filename. */
-  resumePdfPath: "/pooja-lakshmi-resume.pdf",
+  /**
+   * Resume file under `frontend/public/` (served at site root with Vite base path applied in Hero).
+   * `.docx` parses well in many ATS tools; export PDF from Word (Save As → PDF) if you prefer.
+   */
+  resumeFileName: "pooja-lakshmi-resume.docx",
   heroLead:
     "Senior software specialist with 12+ years building and scaling Spring Boot microservices in distributed, high-traffic environments—strengthened by Docker, Kubernetes, and pragmatic GenAI tooling that keeps delivery fast and data-safe.",
   languages: ["English", "Tamil", "Hindi", "French"],
