@@ -69,7 +69,9 @@ The workflow sets `VITE_BASE_PATH` and `VITE_SITE_URL` automatically for both:
 
 ## Part C — API on the live site (optional but recommended)
 
-On GitHub Pages, the site is **static only**. Calls to `/api/...` on the same host will **not** reach your Java services until you host the API somewhere public.
+On GitHub Pages, the site is **static only**. The UI automatically falls back to **`frontend/src/data/portfolioFallback.json`** when the API is unreachable, so skills / experience / education still render. After you change **`PortfolioDataRepository.java`**, update that JSON (or rely only on **`VITE_API_BASE_URL`** once a public gateway exists).
+
+Calls to `/api/...` on the same host will **not** reach your Java services until you host the API somewhere public.
 
 1. Deploy **portfolio-service**, **contact-service**, and **api-gateway** to a host that supports Java (for example [Render](https://render.com), [Railway](https://railway.app), or your employer cloud). The browser must reach your **gateway** over **HTTPS** (for example `https://portfolio-api-xxxx.onrender.com`).
 2. In your GitHub repo: **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.

@@ -4,7 +4,7 @@ function barColor(p) {
   return "from-indigo-400 to-sky-400";
 }
 
-export default function SkillsSection({ categories, softSkills, loading, error }) {
+export default function SkillsSection({ categories, softSkills, loading, error, usingOfflineData }) {
   return (
     <section id="skills" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -16,13 +16,14 @@ export default function SkillsSection({ categories, softSkills, loading, error }
             Skills that ship resilient software
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-            Pulled from your live portfolio API so recruiters always see the same JSON your services
-            expose—swap data in the Java repository when your resume evolves.
+            {usingOfflineData
+              ? "Bundled snapshot for static hosting (GitHub Pages). Keep `src/data/portfolioFallback.json` in sync with your Java `PortfolioDataRepository` when you update the CV."
+              : "Pulled from your live portfolio API so recruiters see the same JSON your services expose—swap data in the Java repository when your resume evolves."}
           </p>
         </div>
 
         {loading && (
-          <p className="mt-10 text-sm font-medium text-slate-500">Loading skills from the API…</p>
+          <p className="mt-10 text-sm font-medium text-slate-500">Loading skills…</p>
         )}
         {error && (
           <p className="mt-10 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">

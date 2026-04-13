@@ -12,7 +12,7 @@ export default function ExperienceSection({ entries, loading, error }) {
         </div>
 
         {loading && (
-          <p className="mt-10 text-sm font-medium text-slate-500">Loading experience from the API…</p>
+          <p className="mt-10 text-sm font-medium text-slate-500">Loading experience…</p>
         )}
         {error && (
           <p className="mt-10 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">

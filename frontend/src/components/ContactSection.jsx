@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { submitContact } from "../api/client.js";
 
-export default function ContactSection({ profile }) {
+export default function ContactSection({ profile, useMailtoFallback = false }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState({ type: "idle", text: "" });
   const [submitting, setSubmitting] = useState(false);
@@ -11,12 +11,24 @@ export default function ContactSection({ profile }) {
     setSubmitting(true);
     setStatus({ type: "idle", text: "" });
     try {
-      const res = await submitContact(form);
-      setStatus({
-        type: "success",
-        text: `Message received (reference ${res.id}). I will get back to you soon.`,
-      });
-      setForm({ name: "", email: "", message: "" });
+      if (useMailtoFallback) {
+        const subject = `Portfolio contact from ${form.name}`;
+        const body = `From: ${form.name} <${form.email}>\n\n${form.message}`;
+        const href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = href;
+        setStatus({
+          type: "success",
+          text: "Your email app should open with this message ready to send. If nothing opens, copy the address above.",
+        });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        const res = await submitContact(form);
+        setStatus({
+          type: "success",
+          text: `Message received (reference ${res.id}). I will get back to you soon.`,
+        });
+        setForm({ name: "", email: "", message: "" });
+      }
     } catch (err) {
       setStatus({
         type: "error",
@@ -38,8 +50,9 @@ export default function ContactSection({ profile }) {
             Let us build something dependable together
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">
-            This form posts to your Spring Boot contact microservice through the API gateway—ideal for
-            wiring to email providers or ticketing tools later.
+            {useMailtoFallback
+              ? "On this static site the form opens your email app with a draft to me (no server)."
+              : "This form posts to your Spring Boot contact microservice through the API gateway—ideal for wiring to email providers or ticketing tools later."}
           </p>
           <div className="mt-8 space-y-3 text-sm text-slate-700">
             <p>

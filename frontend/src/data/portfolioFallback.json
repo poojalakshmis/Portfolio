@@ -1,0 +1,179 @@
+{
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "skills": [
+        { "name": "Java", "proficiency": 98 },
+        { "name": "JavaScript", "proficiency": 85 },
+        { "name": "Python", "proficiency": 82 },
+        { "name": "PL/SQL", "proficiency": 88 },
+        { "name": "SQL", "proficiency": 90 },
+        { "name": "Shell Scripting", "proficiency": 80 },
+        { "name": "Unix", "proficiency": 78 }
+      ]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "skills": [
+        { "name": "Docker", "proficiency": 92 },
+        { "name": "Kubernetes", "proficiency": 90 },
+        { "name": "AWS", "proficiency": 80 },
+        { "name": "Jenkins / CI/CD", "proficiency": 88 },
+        { "name": "REST APIs", "proficiency": 95 },
+        { "name": "SOAP Services", "proficiency": 85 },
+        { "name": "Kafka", "proficiency": 82 },
+        { "name": "Microservices", "proficiency": 95 }
+      ]
+    },
+    {
+      "category": "Backend Frameworks",
+      "skills": [
+        { "name": "Spring Boot", "proficiency": 98 },
+        { "name": "Spring MVC", "proficiency": 88 },
+        { "name": "Hibernate", "proficiency": 90 },
+        { "name": "JSF", "proficiency": 75 },
+        { "name": "Spring Microservices", "proficiency": 95 },
+        { "name": "Struts", "proficiency": 70 }
+      ]
+    },
+    {
+      "category": "Databases",
+      "skills": [
+        { "name": "VoltDB", "proficiency": 75 },
+        { "name": "Oracle", "proficiency": 90 },
+        { "name": "MySQL", "proficiency": 85 }
+      ]
+    },
+    {
+      "category": "Testing & QA",
+      "skills": [
+        { "name": "Karate", "proficiency": 88 },
+        { "name": "Cucumber", "proficiency": 85 },
+        { "name": "JMeter", "proficiency": 82 },
+        { "name": "Regression & API test automation", "proficiency": 88 }
+      ]
+    },
+    {
+      "category": "Practices & Domains",
+      "skills": [
+        { "name": "Agile / Scrum", "proficiency": 92 },
+        { "name": "SDLC & design patterns", "proficiency": 90 },
+        { "name": "Distributed & HA systems", "proficiency": 88 },
+        { "name": "Telecom (4G/5G)", "proficiency": 92 },
+        { "name": "Insurance", "proficiency": 85 },
+        { "name": "Manufacturing & logistics", "proficiency": 78 }
+      ]
+    },
+    {
+      "category": "Observability",
+      "skills": [
+        { "name": "Kibana", "proficiency": 85 },
+        { "name": "Grafana", "proficiency": 82 },
+        { "name": "Prometheus", "proficiency": 80 }
+      ]
+    },
+    {
+      "category": "GenAI tooling",
+      "skills": [
+        { "name": "Cursor", "proficiency": 90 },
+        { "name": "GitHub Copilot", "proficiency": 88 },
+        { "name": "Claude / Gemini", "proficiency": 80 },
+        { "name": "Notebook LLM / Gamma", "proficiency": 75 }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Amdocs Malaysia",
+      "role": "Senior Software Specialist",
+      "period": "Jun 2023 – Present",
+      "location": "Kuala Lumpur, Malaysia",
+      "achievements": [
+        "Use GenAI tools (Cursor, Copilot) in development with strong data-security practices.",
+        "Built GenAI-assisted tools such as CDR analyzer, PCAP analyzer, and log flow generators for faster root-cause analysis.",
+        "Ran data-analytics surveys to find time-heavy workflows and automated them with GenAI.",
+        "Technical lead on backend initiatives: architecture, standards, and mentoring engineers.",
+        "Partnered with product, frontend, QA, and DevOps to ship reliable features on schedule.",
+        "Resolved critical customer escalations with JMeter, SOAP, Karate, curl, and deep product knowledge.",
+        "Elastic Stack for KPIs, monitoring, and alerting; Docker/Kubernetes for deploy and rollback.",
+        "Cross-functional initiatives between support and other teams to improve product understanding."
+      ]
+    },
+    {
+      "company": "Openet Malaysia",
+      "role": "Senior Software Engineer",
+      "period": "Dec 2019 – Jun 2023",
+      "location": "Malaysia",
+      "achievements": [
+        "Designed scalable distributed microservices with REST for high-traffic, business-critical workloads.",
+        "Event-driven backends with Kafka-style messaging for reliable service communication.",
+        "Production engineering: bug fixes across products and diverse customer environments.",
+        "CI/CD with Jenkins, GitHub, or AWS CodePipeline; IAM for access management.",
+        "4G/5G network configuration reviews aligned with 3GPP; performance tuning and thread synchronization.",
+        "5G usage monitoring via Java microservices in containers; Cucumber/Karate QA; Jenkins pipelines."
+      ]
+    },
+    {
+      "company": "KGISL Malaysia",
+      "role": "Senior Associate",
+      "period": "Jul 2019 – Nov 2019",
+      "location": "Malaysia (Client: Allianz Insurance)",
+      "achievements": [
+        "Agile delivery across full-stack Oracle ADF development for Allianz Malaysia.",
+        "Built auto-renewal in Oracle ADF, replacing manual renewal for users.",
+        "Performance tuning for PL/SQL batches and the application layer.",
+        "Bug-free deliveries for new product lines across two modules."
+      ]
+    },
+    {
+      "company": "Majesco Malaysia",
+      "role": "Senior Software Engineer",
+      "period": "Aug 2017 – Jul 2019",
+      "location": "Malaysia (Client: PruBSN Takaful)",
+      "achievements": [
+        "Led migration of the Alpha project from Informix legacy to Java (Spring Boot, Hibernate).",
+        "Delivered enhancements for the Anugerah product line and an investigation project for fraudulent claims.",
+        "Drools and Jasper Reports for claims calculations and correspondence.",
+        "Technical team lead: requirements, delivery oversight, peer reviews, and stakeholder communication.",
+        "Recognized by the client for on-time delivery and clear communication."
+      ]
+    },
+    {
+      "company": "Cognizant Technology Solutions",
+      "role": "Associate",
+      "period": "Dec 2013 – Jun 2017",
+      "location": "Chennai, India",
+      "achievements": [
+        "Pricing and quotation modules for gas and power; bulk upload for automated meter reads.",
+        "L2/L3 support for pricing, billing, and SCM for Total Gas & Power.",
+        "Java (JSF, Spring MVC), JCAPS integrations, UNIX batches, SQL/PL/SQL maintenance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Business Administration (Data Science)",
+      "institution": "Manipal Academy of Higher Education, Bangalore",
+      "period": "Oct 2025 – Oct 2027 (in progress)",
+      "highlights": ["Focus on data science alongside leadership and analytical decision-making."]
+    },
+    {
+      "degree": "Bachelor of Engineering (Electrical & Electronics Engineering)",
+      "institution": "Sri Shakthi Institute of Engineering & Technology, Coimbatore",
+      "period": "Aug 2009 – May 2013",
+      "highlights": ["CGPA: 8.24"]
+    },
+    {
+      "degree": "Professional development & certifications",
+      "institution": "Various",
+      "period": "Ongoing",
+      "highlights": [
+        "Google Data Analyst certificate.",
+        "LinkedIn-certified Kubernetes and Docker (with production experience).",
+        "Python for data analytics; Oracle ADF training.",
+        "GenAI training: Cursor, Copilot, Gemini, Claude with secure usage patterns.",
+        "Leadership, mentoring, and business-analyst style stakeholder engagement."
+      ]
+    }
+  ]
+}

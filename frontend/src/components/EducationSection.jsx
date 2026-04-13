@@ -12,7 +12,7 @@ export default function EducationSection({ entries, loading, error }) {
         </div>
 
         {loading && (
-          <p className="mt-10 text-sm font-medium text-slate-400">Loading education from the API…</p>
+          <p className="mt-10 text-sm font-medium text-slate-400">Loading education…</p>
         )}
         {error && (
           <p className="mt-10 rounded-2xl border border-rose-400/40 bg-rose-950/40 px-4 py-3 text-sm text-rose-100">
